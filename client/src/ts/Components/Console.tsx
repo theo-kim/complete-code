@@ -3,6 +3,7 @@ import update from 'immutability-helper';
 
 interface IProps {
     onCommand: (command : string, furtherInfoHook : (msg: string) => void) => string[];
+    onReady: (furtherInfoHook : (msg: string) => void) => string[];
 }
 
 interface IState {
@@ -33,6 +34,10 @@ class Console extends React.Component<IProps, IState> {
         this.userInput.scrollIntoView();    
     }
 
+    componentDidMount() {
+        this.props.onReady(this.hook);
+    }
+
     componentDidUpdate() {
         this.scrollToBottom();
         if (this.inputBuffer.length > 0) {
@@ -52,6 +57,7 @@ class Console extends React.Component<IProps, IState> {
     prettyPrint(line : string, key : number) : JSX.Element {
         let isWarning = line.substr(0, "[WARNING]".length) === "[WARNING]";
         let isError = line.substr(0, "[ERROR]".length) === "[ERROR]";
+        // line = line.replace("\n", "<br>");
         return (<div className={"console-line" + (isError ? " error" : "") + (isWarning ? " warning" : "")} key={key}>
             { line }
         </div>);

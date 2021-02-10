@@ -4,7 +4,7 @@ import { existsSync } from 'fs';
 enum ClientResourceType {
     HTML="html",
     CSS="css",
-    JS="js"
+    PNG="png"
 };
 
 class Client {

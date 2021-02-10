@@ -20,6 +20,15 @@ router.get("/:stylesheet.css", (req, res, next) => {
         res.sendFile(path);
     }
 });
+router.get("/:img.png", (req, res, next) => {
+    const path = client_2.default.resolveResource(client_1.ClientResourceType.PNG, req.params.img);
+    if (path == null) {
+        next("404");
+    }
+    else {
+        res.sendFile(path);
+    }
+});
 // javascript
 router.get("/driver.js", (req, res, next) => {
     const path = client_2.default.resolveSource("source");

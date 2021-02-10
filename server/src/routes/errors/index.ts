@@ -16,7 +16,7 @@ function errorHandler (err : string, req : Request, res: Response, next: NextFun
     // }
 
     // default to plain-text. send()
-    res.type('txt').send('Not found');
+    res.type('txt').send('404: Not found');
 };
 
 export default errorHandler;

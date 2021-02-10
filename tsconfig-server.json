@@ -10,6 +10,7 @@
         "moduleResolution": "Node",
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
         "paths": {
             "*": [
                 "./node_modules/"
@@ -18,5 +19,8 @@
     },
     "include": [
         "./server/src/index.ts"
+    ],
+    "files" : [
+        "./types/express.d.ts"
     ]
 }

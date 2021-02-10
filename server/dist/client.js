@@ -7,7 +7,7 @@ var ClientResourceType;
 (function (ClientResourceType) {
     ClientResourceType["HTML"] = "html";
     ClientResourceType["CSS"] = "css";
-    ClientResourceType["JS"] = "js";
+    ClientResourceType["PNG"] = "png";
 })(ClientResourceType || (ClientResourceType = {}));
 exports.ClientResourceType = ClientResourceType;
 ;

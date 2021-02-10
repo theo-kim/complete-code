@@ -13,7 +13,7 @@ function errorHandler(err, req, res, next) {
     //     return;
     // }
     // default to plain-text. send()
-    res.type('txt').send('Not found');
+    res.type('txt').send('404: Not found');
 }
 ;
 exports.default = errorHandler;
