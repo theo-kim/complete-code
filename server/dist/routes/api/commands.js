@@ -25,7 +25,6 @@ let cat = function () {
 };
 exports.cat = cat;
 let pwd = (env, ostream, istream) => {
-    console.log(env);
     ostream(env.PWD);
 };
 exports.pwd = pwd;

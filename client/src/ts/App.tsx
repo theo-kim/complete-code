@@ -3,6 +3,7 @@ import * as React from 'react';
 import { threadId } from 'worker_threads';
 // import io from 'socket.io-client';
 import Console from './Components/Console';
+import Editor from './Components/Editor';
 
 // import AppBar from './components/AppBar';
 // import WorkSpace from './components/WorkSpace';
@@ -12,6 +13,7 @@ export default class App extends React.Component {
         return (
         <div id="app">
             <Console onCommand={this.handleConsoleInput} onReady={this.printWelcomeMessage} />
+            <Editor />
         </div>);
     };
 

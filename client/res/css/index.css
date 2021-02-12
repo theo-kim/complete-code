@@ -25,22 +25,29 @@ body {
 #app {
     display: flex;
     align-items: stretch;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: stretch;
     flex-grow: 1;
+    padding: 20px;
 }
 
 #console {
     font-family: 'Ubuntu Mono', monospace;
-    margin: 45px;
-    margin-top: 35px;
-    padding: 10px;
-    border: 1px #fff solid;
-    border-top: 10px #fff solid;
+    border-top: 1px #fff solid;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    border: 2px #222 solid;
+}
+
+.console-header {
+    background: #fff;
+    color: #333;
+    font-weight: bold;
+    padding: 5px;
 }
 
 .console-line {
@@ -48,6 +55,14 @@ body {
     flex-direction: row;
     line-height: 1.25em;
     white-space: pre-line;
+}
+
+.console-body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px #fff solid;
+    flex-grow: 1;
 }
 
 .console-line input{
@@ -63,4 +78,33 @@ body {
 .console-line input:focus {
     border: 0;
     outline: 0;
+}
+
+#editor {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    font-family: 'Ubuntu Mono', monospace;
+    border: 2px #222 solid;
+    display: flex;
+    flex-direction: column;
+}
+
+.editor-header {
+    background: #fff;
+    color: #333;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.editor-body {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 1px #fff solid;
+    flex-grow: 1;
+}
+
+.editor-body:focus {
+    outline: none;
 }

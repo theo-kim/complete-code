@@ -19,13 +19,16 @@ const legalcommands = {
     'login': () => { },
     'register': () => { }
 };
+router.get("/", (req, res) => {
+    return res.status(200).type('txt').send('');
+});
 router.get("/:command", auth_1.default, env_1.default, (req, res) => {
     const ostream = (msg) => res.type('txt').send(msg);
     if (req.params.command in legalcommands) {
-        legalcommands[req.params.command](req.env, ostream, null);
+        return legalcommands[req.params.command](req.env, ostream, null);
     }
     else {
-        res.status(400).type('txt').send(req.params.command + ": " + defaults_1.default.unknown);
+        return res.status(400).type('txt').send(req.params.command + ": " + defaults_1.default.unknown);
     }
 });
 exports.default = router;

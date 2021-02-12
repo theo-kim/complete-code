@@ -25,13 +25,17 @@ const legalcommands : Man = {
     'register' : () => {}
 };
 
+router.get("/", (req : Request, res: Response) => {
+    return res.status(200).type('txt').send('');
+});
+
 router.get("/:command", auth, env, (req : Request, res : Response) => {
     const ostream = (msg: string) => res.type('txt').send(msg);
     if (req.params.command in legalcommands) {
-        legalcommands[req.params.command](req.env, ostream, null);
+        return legalcommands[req.params.command](req.env, ostream, null);
     }
     else {
-        res.status(400).type('txt').send(req.params.command + ": " + defaults.unknown);
+        return res.status(400).type('txt').send(req.params.command + ": " + defaults.unknown);
     }
 });
 
